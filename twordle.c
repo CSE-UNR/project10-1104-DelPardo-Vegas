@@ -15,11 +15,12 @@ int main() {
 	int check1 = 0;
 	int check2 = 0;
 	int check = loadMystery(mystery);
+	int count = 0;
 	if (check == 1) {
 			printf("Cannot open file\n");
 			return 1;
 	}
-	for(int count = 0; count < 6; count++) {
+	for(count = 0; count < 6; count++) {
 		
 		 do {
 			printf("GUESS %d! Enter your guess: ", count + 1);
@@ -45,6 +46,10 @@ int main() {
 			checkGuess(guess, mystery, count);
 		}
 	}
+	if(count == 6) {
+		printf("You lost, better luck next time!\n");
+	}
+	return 0;
 		
 	}
 
